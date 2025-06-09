@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert images to PDF online for free. Fast, secure, and easy-to-use image to PDF converter with multiple customization options.">
-    <meta name="keywords" content="image to pdf, convert images to pdf, jpg to pdf, png to pdf, free pdf converter, online pdf creator">
-    <meta name="author" content="Imagify">
+    <meta name="description" content="Free online tool to convert images to PDF quickly. Supports JPG, PNG, WEBP formats. No registration required.">
+    <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, convert image to pdf, free pdf converter">
+    <meta name="author" content="ImagePDFConverter">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Imagify - Convert Images to PDF Online">
-    <meta property="og:description" content="Free online tool to convert multiple images to PDF documents quickly and easily.">
+    <meta property="og:title" content="Free Image to PDF Converter">
+    <meta property="og:description" content="Convert your images to PDF documents quickly and easily.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imagify.example.com">
-    <link rel="canonical" href="https://imagify.example.com">
-    <title>Imagify - Convert Images to PDF Online | Free Image to PDF Converter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+    <title>Image to PDF Converter | Free Online Tool</title>
+    <link rel="canonical" href="https://yourwebsite.com/image-to-pdf">
     <style>
         :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4895ef;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4cc9f0;
-            --warning: #f72585;
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --light-text: #6c757d;
+            --white: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -34,189 +33,163 @@
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .navbar {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 1.8rem;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
         }
 
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+        .logo span {
+            color: var(--accent-color);
         }
 
-        .container {
-            flex: 1;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+        nav ul {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding: 40px 0;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 3rem;
-            width: 100%;
+            margin-bottom: 50px;
         }
 
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            background: linear-gradient(to right, var(--primary), var(--warning));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            margin-bottom: 20px;
+            color: var(--primary-color);
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: #555;
+            color: var(--light-text);
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 30px;
         }
 
         .converter-container {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            width: 100%;
-            max-width: 800px;
-            transition: all 0.3s ease;
-        }
-
-        .converter-container:hover {
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 40px;
         }
 
         .drop-area {
-            border: 2px dashed var(--accent);
-            border-radius: 8px;
-            padding: 3rem 2rem;
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-            position: relative;
-            overflow: hidden;
+            transition: var(--transition);
+            margin-bottom: 20px;
         }
 
-        .drop-area.highlight {
-            border-color: var(--success);
-            background-color: rgba(72, 149, 239, 0.05);
+        .drop-area:hover {
+            background-color: rgba(74, 107, 255, 0.05);
+        }
+
+        .drop-area.active {
+            background-color: rgba(74, 107, 255, 0.1);
+            border-style: solid;
         }
 
         .drop-area i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
         .drop-area h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark);
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
 
         .drop-area p {
-            color: #666;
-            margin-bottom: 1rem;
+            color: var(--light-text);
+            margin-bottom: 15px;
         }
 
         .btn {
-            background-color: var(--primary);
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--white);
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 16px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
         }
 
         .btn:hover {
-            background-color: var(--secondary);
+            background-color: #3a5bef;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #e05555;
         }
 
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
         }
 
         .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-warning {
-            background-color: var(--warning);
-        }
-
-        .btn-warning:hover {
-            background-color: #e5177a;
-        }
-
-        .btn-success {
-            background-color: var(--success);
-        }
-
-        .btn-success:hover {
-            background-color: #3ab4d8;
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
         .file-input {
@@ -224,48 +197,33 @@
         }
 
         .preview-container {
-            display: none;
-            margin-top: 2rem;
-            width: 100%;
-        }
-
-        .preview-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .preview-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 0.5rem;
-        }
-
-        .image-preview {
+        .preview-item {
             position: relative;
-            border-radius: 8px;
+            width: 120px;
+            height: 160px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 1;
+            box-shadow: var(--shadow);
         }
 
-        .image-preview img {
+        .preview-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .remove-btn {
+        .preview-item .remove-btn {
             position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(247, 37, 133, 0.8);
-            color: white;
-            border: none;
+            top: 5px;
+            right: 5px;
+            background-color: var(--accent-color);
+            color: var(--white);
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -273,1385 +231,591 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            font-size: 12px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: var(--transition);
         }
 
-        .image-preview:hover .remove-btn {
+        .preview-item:hover .remove-btn {
             opacity: 1;
         }
 
         .options {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            margin-top: 30px;
         }
 
         .option-group {
+            margin-bottom: 20px;
+        }
+
+        .option-group h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .radio-option input {
+            margin-right: 5px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-option input {
+            margin-right: 5px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+        }
+
+        footer {
+            background-color: var(--white);
+            padding: 30px 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
             flex: 1;
             min-width: 200px;
         }
 
-        .option-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark);
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
         }
 
-        .option-group select, .option-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
+        .footer-section ul {
+            list-style: none;
         }
 
-        .loading {
-            display: none;
-            text-align: center;
-            margin: 2rem 0;
+        .footer-section ul li {
+            margin-bottom: 10px;
         }
 
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(67, 97, 238, 0.2);
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            width: 100%;
-        }
-
-        .action-buttons .btn {
-            flex: 1;
-            justify-content: center;
-        }
-
-        /* Ad Containers */
-        .ad-container {
-            width: 100%;
-            margin: 2rem 0;
-            text-align: center;
-            background-color: #f5f5f5;
-            padding: 1rem;
-            border-radius: 8px;
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ad-container.horizontal {
-            max-width: 728px;
-            height: 90px;
-        }
-
-        .ad-container.vertical {
-            max-width: 300px;
-            height: 250px;
-            margin: 2rem auto;
-        }
-
-        .ad-placeholder {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .converter-container {
-                padding: 1.5rem;
-            }
-
-            .options {
-                flex-direction: column;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .ad-container.horizontal {
-                height: 100px;
-            }
-        }
-
-        /* Structured Data for Rich Snippets */
-        .structured-data {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="active">Home</a>
-                <a href="#">Features</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Top Ad Banner -->
-        <div class="ad-container horizontal">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <div class="hero">
-            <h1>Convert Images to PDF in Seconds</h1>
-            <p>Drag and drop your images or select files to create a professional PDF document. Fast, secure, and completely free!</p>
-        </div>
-
-        <div class="converter-container">
-            <div class="drop-area" id="dropArea">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Drag & Drop Your Images Here</h3>
-                <p>or</p>
-                <button class="btn" id="selectFilesBtn">
-                    <i class="fas fa-folder-open"></i> Select Files
-                </button>
-                <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
-            </div>
-
-            <div class="preview-container" id="previewContainer">
-                <div class="preview-header">
-                    <h3>Selected Images</h3>
-                    <button class="btn btn-warning" id="clearAllBtn">
-                        <i class="fas fa-trash"></i> Clear All
-                    </button>
-                </div>
-                <div class="preview-images" id="previewImages"></div>
-
-                <div class="options">
-                    <div class="option-group">
-                        <label for="pdfName">PDF Name</label>
-                        <input type="text" id="pdfName" placeholder="Enter PDF name" value="converted_images">
-                    </div>
-                    <div class="option-group">
-                        <label for="pageSize">Page Size</label>
-                        <select id="pageSize">
-                            <option value="a4">A4</option>
-                            <option value="letter">Letter</option>
-                            <option value="legal">Legal</option>
-                            <option value="auto">Auto (Fit to image)</option>
-                        </select>
-                    </div>
-                    <div class="option-group">
-                        <label for="pageOrientation">Orientation</label>
-                        <select id="pageOrientation">
-                            <option value="portrait">Portrait</option>
-                            <option value="landscape">Landscape</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Creating your PDF...</p>
-                </div>
-
-                <div class="action-buttons">
-                    <button class="btn" id="convertBtn">
-                        <i class="fas fa-file-pdf"></i> Convert to PDF
-                    </button>
-                    <button class="btn btn-success" id="downloadBtn" style="display: none;">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-outline" id="newConversionBtn" style="display: none;">
-                        <i class="fas fa-redo"></i> New Conversion
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sidebar Ad (shown on larger screens) -->
-        <div class="ad-container vertical" style="display: none;">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="0987654321"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
-            </div>
-            <p>The easiest way to convert your images to PDF documents</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <p class="copyright">© 2025 Imagify. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json" class="structured-data">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Imagify - Image to PDF Converter",
-        "url": "https://imagify.example.com",
-        "description": "Free online tool to convert multiple images to PDF documents quickly and easily.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "Imagify"
-        }
-    }
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        // Initialize jsPDF
-        const { jsPDF } = window.jspdf;
-
-        // DOM Elements
-        const dropArea = document.getElementById('dropArea');
-        const fileInput = document.getElementById('fileInput');
-        const selectFilesBtn = document.getElementById('selectFilesBtn');
-        const previewContainer = document.getElementById('previewContainer');
-        const previewImages = document.getElementById('previewImages');
-        const clearAllBtn = document.getElementById('clearAllBtn');
-        const convertBtn = document.getElementById('convertBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const newConversionBtn = document.getElementById('newConversionBtn');
-        const loading = document.getElementById('loading');
-        const pdfNameInput = document.getElementById('pdfName');
-        const pageSizeSelect = document.getElementById('pageSize');
-        const pageOrientationSelect = document.getElementById('pageOrientation');
-        const verticalAd = document.querySelector('.ad-container.vertical');
-
-        // Store selected files and generated PDF
-        let files = [];
-        let generatedPdf = null;
-
-        // Show vertical ad on larger screens
-        if (window.innerWidth > 992) {
-            verticalAd.style.display = 'flex';
-        }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 992) {
-                verticalAd.style.display = 'flex';
-            } else {
-                verticalAd.style.display = 'none';
-            }
-        });
-
-        // Event Listeners
-        selectFilesBtn.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', handleFileSelect);
-        dropArea.addEventListener('dragover', handleDragOver);
-        dropArea.addEventListener('dragleave', handleDragLeave);
-        dropArea.addEventListener('drop', handleDrop);
-        clearAllBtn.addEventListener('click', clearAllFiles);
-        convertBtn.addEventListener('click', convertToPDF);
-        downloadBtn.addEventListener('click', downloadPDF);
-        newConversionBtn.addEventListener('click', startNewConversion);
-
-        // Functions
-        function handleFileSelect(e) {
-            const selectedFiles = e.target.files;
-            if (selectedFiles.length > 0) {
-                files = Array.from(selectedFiles);
-                updatePreview();
-            }
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-            dropArea.classList.add('highlight');
-        }
-
-        function handleDragLeave() {
-            dropArea.classList.remove('highlight');
-        }
-
-        function handleDrop(e) {
-            e.preventDefault();
-            dropArea.classList.remove('highlight');
-            
-            const droppedFiles = e.dataTransfer.files;
-            if (droppedFiles.length > 0) {
-                files = Array.from(droppedFiles).filter(file => file.type.startsWith('image/'));
-                updatePreview();
-            }
-        }
-
-        function updatePreview() {
-            if (files.length === 0) return;
-            
-            previewImages.innerHTML = '';
-            
-            files.forEach((file, index) => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const imagePreview = document.createElement('div');
-                    imagePreview.className = 'image-preview';
-                    
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = file.name;
-                    
-                    const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-btn';
-                    removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-                    removeBtn.addEventListener('click', () => removeFile(index));
-                    
-                    imagePreview.appendChild(img);
-                    imagePreview.appendChild(removeBtn);
-                    previewImages.appendChild(imagePreview);
-                };
-                reader.readAsDataURL(file);
-            });
-            
-            previewContainer.style.display = 'block';
-            showConvertButton();
-        }
-
-        function removeFile(index) {
-            files.splice(index, 1);
-            updatePreview();
-            
-            if (files.length === 0) {
-                previewContainer.style.display = 'none';
-            }
-        }
-
-        function clearAllFiles() {
-            files = [];
-            previewContainer.style.display = 'none';
-            fileInput.value = '';
-            generatedPdf = null;
-            showConvertButton();
-        }
-
-        function showConvertButton() {
-            convertBtn.style.display = 'flex';
-            downloadBtn.style.display = 'none';
-            newConversionBtn.style.display = 'none';
-        }
-
-        function showDownloadButtons() {
-            convertBtn.style.display = 'none';
-            downloadBtn.style.display = 'flex';
-            newConversionBtn.style.display = 'flex';
-        }
-
-        async function convertToPDF() {
-            if (files.length === 0) {
-                alert('Please select at least one image to convert.');
-                return;
-            }
-
-            // Show loading
-            loading.style.display = 'block';
-            convertBtn.disabled = true;
-
-            // Get user options
-            const pdfName = pdfNameInput.value || 'converted_images';
-            const pageSize = pageSizeSelect.value;
-            const orientation = pageOrientationSelect.value;
-
-            // Create PDF
-            const pdf = new jsPDF({
-                orientation: orientation,
-                unit: 'mm',
-                format: pageSize === 'auto' ? undefined : pageSize
-            });
-
-            try {
-                // Process each image
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const imgData = await readFileAsDataURL(file);
-                    
-                    if (i > 0) {
-                        pdf.addPage();
-                    }
-                    
-                    // Add image to PDF
-                    if (pageSize === 'auto') {
-                        // Get image dimensions to fit the page
-                        const img = await loadImage(imgData);
-                        const imgWidth = img.width;
-                        const imgHeight = img.height;
-                        
-                        // Calculate dimensions to fit PDF (A4 ratio)
-                        const pdfWidth = pdf.internal.pageSize.getWidth();
-                        const pdfHeight = pdf.internal.pageSize.getHeight();
-                        
-                        let width, height;
-                        const imgRatio = imgWidth / imgHeight;
-                        const pdfRatio = pdfWidth / pdfHeight;
-                        
-                        if (imgRatio > pdfRatio) {
-                            width = pdfWidth;
-                            height = pdfWidth / imgRatio;
-                        } else {
-                            height = pdfHeight;
-                            width = pdfHeight * imgRatio;
-                        }
-                        
-                        pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
-                    } else {
-                        // Fit to selected page size
-                        pdf.addImage(imgData, 'JPEG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
-                    }
-                }
-                
-                // Store the generated PDF
-                generatedPdf = pdf;
-                
-                // Show download button instead of convert button
-                showDownloadButtons();
-                
-            } catch (error) {
-                console.error('Error creating PDF:', error);
-                alert('An error occurred while creating the PDF. Please try again.');
-            } finally {
-                // Hide loading
-                loading.style.display = 'none';
-                convertBtn.disabled = false;
-            }
-        }
-
-        function downloadPDF() {
-            if (generatedPdf) {
-                const pdfName = pdfNameInput.value || 'converted_images';
-                generatedPdf.save(`${pdfName}.pdf`);
-            }
-        }
-
-        function startNewConversion() {
-            clearAllFiles();
-        }
-
-        function r<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert images to PDF online for free. Fast, secure, and easy-to-use image to PDF converter with multiple customization options.">
-    <meta name="keywords" content="image to pdf, convert images to pdf, jpg to pdf, png to pdf, free pdf converter, online pdf creator">
-    <meta name="author" content="Imagify">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Imagify - Convert Images to PDF Online">
-    <meta property="og:description" content="Free online tool to convert multiple images to PDF documents quickly and easily.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imagify.example.com">
-    <link rel="canonical" href="https://imagify.example.com">
-    <title>Imagify - Convert Images to PDF Online | Free Image to PDF Converter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4895ef;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4cc9f0;
-            --warning: #f72585;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 1.8rem;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
+        .footer-section ul li a {
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            color: var(--light-text);
+            transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .container {
-            flex: 1;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            width: 100%;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            background: linear-gradient(to right, var(--primary), var(--warning));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-        .converter-container {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            width: 100%;
-            max-width: 800px;
-            transition: all 0.3s ease;
-        }
-
-        .converter-container:hover {
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .drop-area {
-            border: 2px dashed var(--accent);
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .drop-area.highlight {
-            border-color: var(--success);
-            background-color: rgba(72, 149, 239, 0.05);
-        }
-
-        .drop-area i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .drop-area h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .drop-area p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-warning {
-            background-color: var(--warning);
-        }
-
-        .btn-warning:hover {
-            background-color: #e5177a;
-        }
-
-        .btn-success {
-            background-color: var(--success);
-        }
-
-        .btn-success:hover {
-            background-color: #3ab4d8;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .preview-container {
-            display: none;
-            margin-top: 2rem;
-            width: 100%;
-        }
-
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .preview-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 0.5rem;
-        }
-
-        .image-preview {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 1;
-        }
-
-        .image-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .remove-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(247, 37, 133, 0.8);
-            color: white;
-            border: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-preview:hover .remove-btn {
-            opacity: 1;
-        }
-
-        .options {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .option-group {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .option-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .option-group select, .option-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(67, 97, 238, 0.2);
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            width: 100%;
-        }
-
-        .action-buttons .btn {
-            flex: 1;
-            justify-content: center;
-        }
-
-        /* Ad Containers */
-        .ad-container {
-            width: 100%;
-            margin: 2rem 0;
-            text-align: center;
-            background-color: #f5f5f5;
-            padding: 1rem;
-            border-radius: 8px;
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ad-container.horizontal {
-            max-width: 728px;
-            height: 90px;
-        }
-
-        .ad-container.vertical {
-            max-width: 300px;
-            height: 250px;
-            margin: 2rem auto;
-        }
-
-        .ad-placeholder {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
         }
 
         .copyright {
-            font-size: 0.9rem;
-            color: #aaa;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: var(--light-text);
         }
 
         @media (max-width: 768px) {
-            .navbar {
+            .header-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 15px;
             }
 
-            .nav-links {
-                width: 100%;
+            nav ul {
                 justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
             }
 
             .hero h1 {
                 font-size: 2rem;
             }
 
-            .converter-container {
-                padding: 1.5rem;
+            .drop-area {
+                padding: 30px 15px;
             }
 
-            .options {
-                flex-direction: column;
+            .actions {
+                justify-content: center;
             }
 
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .ad-container.horizontal {
-                height: 100px;
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
 
-        /* Structured Data for Rich Snippets */
-        .structured-data {
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .preview-container {
+                justify-content: center;
+            }
+        }
+
+        /* Loading spinner */
+        .spinner {
             display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="navbar">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="active">Home</a>
-                <a href="#">Features</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
+        <div class="container header-content">
+            <a href="#" class="logo">Image<span>PDF</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Top Ad Banner -->
-        <div class="ad-container horizontal">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Convert Images to PDF in Seconds</h1>
+                <p>Transform your JPG, PNG, or WEBP images into high-quality PDF documents with our free online tool. No registration required.</p>
+            </section>
 
-        <div class="hero">
-            <h1>Convert Images to PDF in Seconds</h1>
-            <p>Drag and drop your images or select files to create a professional PDF document. Fast, secure, and completely free!</p>
-        </div>
-
-        <div class="converter-container">
-            <div class="drop-area" id="dropArea">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Drag & Drop Your Images Here</h3>
-                <p>or</p>
-                <button class="btn" id="selectFilesBtn">
-                    <i class="fas fa-folder-open"></i> Select Files
-                </button>
-                <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
-            </div>
-
-            <div class="preview-container" id="previewContainer">
-                <div class="preview-header">
-                    <h3>Selected Images</h3>
-                    <button class="btn btn-warning" id="clearAllBtn">
-                        <i class="fas fa-trash"></i> Clear All
-                    </button>
+            <section class="converter-container">
+                <div id="dropArea" class="drop-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Your Images Here</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+                    <button class="btn" id="selectFilesBtn">Select Images</button>
                 </div>
-                <div class="preview-images" id="previewImages"></div>
+
+                <div id="previewContainer" class="preview-container"></div>
 
                 <div class="options">
                     <div class="option-group">
-                        <label for="pdfName">PDF Name</label>
-                        <input type="text" id="pdfName" placeholder="Enter PDF name" value="converted_images">
+                        <h4>Page Size</h4>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="pageSize" value="a4" checked> A4
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="pageSize" value="letter"> Letter
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="pageSize" value="auto"> Auto
+                            </label>
+                        </div>
                     </div>
+
                     <div class="option-group">
-                        <label for="pageSize">Page Size</label>
-                        <select id="pageSize">
-                            <option value="a4">A4</option>
-                            <option value="letter">Letter</option>
-                            <option value="legal">Legal</option>
-                            <option value="auto">Auto (Fit to image)</option>
-                        </select>
+                        <h4>Orientation</h4>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="orientation" value="portrait" checked> Portrait
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="orientation" value="landscape"> Landscape
+                            </label>
+                        </div>
                     </div>
+
                     <div class="option-group">
-                        <label for="pageOrientation">Orientation</label>
-                        <select id="pageOrientation">
-                            <option value="portrait">Portrait</option>
-                            <option value="landscape">Landscape</option>
-                        </select>
+                        <h4>Options</h4>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="fitToPage" checked> Fit image to page
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="maintainAspectRatio" checked> Maintain aspect ratio
+                        </label>
                     </div>
                 </div>
 
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Creating your PDF...</p>
+                <div class="actions">
+                    <button class="btn" id="convertBtn">Convert to PDF</button>
+                    <button class="btn btn-outline" id="clearBtn">Clear All</button>
                 </div>
 
-                <div class="action-buttons">
-                    <button class="btn" id="convertBtn">
-                        <i class="fas fa-file-pdf"></i> Convert to PDF
-                    </button>
-                    <button class="btn btn-success" id="downloadBtn" style="display: none;">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-outline" id="newConversionBtn" style="display: none;">
-                        <i class="fas fa-redo"></i> New Conversion
-                    </button>
-                </div>
-            </div>
-        </div>
+                <div id="spinner" class="spinner"></div>
+            </section>
 
-        <!-- Sidebar Ad (shown on larger screens) -->
-        <div class="ad-container vertical" style="display: none;">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="0987654321"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <section id="features" class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Conversion</h3>
+                    <p>Convert multiple images to PDF in seconds with our optimized processing engine.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Processing</h3>
+                    <p>Your files are processed in your browser and never uploaded to our servers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Works perfectly on all devices including smartphones and tablets.</p>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="how-it-works">
+                <h2>How to Convert Images to PDF</h2>
+                <ol>
+                    <li>Select images or drag and drop them into the upload area</li>
+                    <li>Adjust settings like page size and orientation if needed</li>
+                    <li>Click "Convert to PDF" button</li>
+                    <li>Download your PDF file when ready</li>
+                </ol>
+            </section>
+
+            <section id="faq" class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>What image formats are supported?</h3>
+                    <p>We support JPG, PNG, WEBP, and most common image formats.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a file size limit?</h3>
+                    <p>There's no strict limit, but very large files may take longer to process.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are my files stored on your servers?</h3>
+                    <p>No, all processing happens in your browser for maximum privacy.</p>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>ImagePDF</h3>
+                <p>Free online tools to make your life easier.</p>
             </div>
-            <p>The easiest way to convert your images to PDF documents</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
             </div>
-            <p class="copyright">© 2025 Imagify. All rights reserved.</p>
+            <div class="footer-section">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="#">Image to PDF</a></li>
+                    <li><a href="#">PDF to Image</a></li>
+                    <li><a href="#">PDF Merger</a></li>
+                    <li><a href="#">PDF Splitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2023 ImagePDF Converter. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json" class="structured-data">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Imagify - Image to PDF Converter",
-        "url": "https://imagify.example.com",
-        "description": "Free online tool to convert multiple images to PDF documents quickly and easily.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "Imagify"
-        }
-    }
-    </script>
+    <div id="toast" class="toast"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         // Initialize jsPDF
         const { jsPDF } = window.jspdf;
 
-        // DOM Elements
+        // DOM elements
         const dropArea = document.getElementById('dropArea');
         const fileInput = document.getElementById('fileInput');
         const selectFilesBtn = document.getElementById('selectFilesBtn');
         const previewContainer = document.getElementById('previewContainer');
-        const previewImages = document.getElementById('previewImages');
-        const clearAllBtn = document.getElementById('clearAllBtn');
         const convertBtn = document.getElementById('convertBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const newConversionBtn = document.getElementById('newConversionBtn');
-        const loading = document.getElementById('loading');
-        const pdfNameInput = document.getElementById('pdfName');
-        const pageSizeSelect = document.getElementById('pageSize');
-        const pageOrientationSelect = document.getElementById('pageOrientation');
-        const verticalAd = document.querySelector('.ad-container.vertical');
+        const clearBtn = document.getElementById('clearBtn');
+        const spinner = document.getElementById('spinner');
+        const toast = document.getElementById('toast');
 
-        // Store selected files and generated PDF
-        let files = [];
-        let generatedPdf = null;
+        // Store uploaded files
+        let uploadedFiles = [];
 
-        // Show vertical ad on larger screens
-        if (window.innerWidth > 992) {
-            verticalAd.style.display = 'flex';
-        }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 992) {
-                verticalAd.style.display = 'flex';
-            } else {
-                verticalAd.style.display = 'none';
-            }
-        });
-
-        // Event Listeners
+        // Event listeners
         selectFilesBtn.addEventListener('click', () => fileInput.click());
         fileInput.addEventListener('change', handleFileSelect);
         dropArea.addEventListener('dragover', handleDragOver);
         dropArea.addEventListener('dragleave', handleDragLeave);
         dropArea.addEventListener('drop', handleDrop);
-        clearAllBtn.addEventListener('click', clearAllFiles);
-        convertBtn.addEventListener('click', convertToPDF);
-        downloadBtn.addEventListener('click', downloadPDF);
-        newConversionBtn.addEventListener('click', startNewConversion);
+        convertBtn.addEventListener('click', convertToPdf);
+        clearBtn.addEventListener('click', clearAll);
 
-        // Functions
+        // Handle file selection
         function handleFileSelect(e) {
-            const selectedFiles = e.target.files;
-            if (selectedFiles.length > 0) {
-                files = Array.from(selectedFiles);
-                updatePreview();
+            const files = e.target.files;
+            if (files.length > 0) {
+                processFiles(files);
             }
         }
 
+        // Handle drag over
         function handleDragOver(e) {
             e.preventDefault();
-            dropArea.classList.add('highlight');
+            e.stopPropagation();
+            dropArea.classList.add('active');
         }
 
-        function handleDragLeave() {
-            dropArea.classList.remove('highlight');
+        // Handle drag leave
+        function handleDragLeave(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.remove('active');
         }
 
+        // Handle drop
         function handleDrop(e) {
             e.preventDefault();
-            dropArea.classList.remove('highlight');
+            e.stopPropagation();
+            dropArea.classList.remove('active');
             
-            const droppedFiles = e.dataTransfer.files;
-            if (droppedFiles.length > 0) {
-                files = Array.from(droppedFiles).filter(file => file.type.startsWith('image/'));
-                updatePreview();
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                processFiles(files);
             }
         }
 
-        function updatePreview() {
-            if (files.length === 0) return;
+        // Process uploaded files
+        function processFiles(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.type.match('image.*')) {
+                    uploadedFiles.push(file);
+                    createPreview(file);
+                }
+            }
             
-            previewImages.innerHTML = '';
-            
-            files.forEach((file, index) => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const imagePreview = document.createElement('div');
-                    imagePreview.className = 'image-preview';
-                    
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = file.name;
-                    
-                    const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-btn';
-                    removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-                    removeBtn.addEventListener('click', () => removeFile(index));
-                    
-                    imagePreview.appendChild(img);
-                    imagePreview.appendChild(removeBtn);
-                    previewImages.appendChild(imagePreview);
-                };
-                reader.readAsDataURL(file);
-            });
-            
-            previewContainer.style.display = 'block';
-            showConvertButton();
-        }
-
-        function removeFile(index) {
-            files.splice(index, 1);
-            updatePreview();
-            
-            if (files.length === 0) {
-                previewContainer.style.display = 'none';
+            if (uploadedFiles.length > 0) {
+                showToast(`${uploadedFiles.length} image(s) added`);
+            } else {
+                showToast('No valid images found');
             }
         }
 
-        function clearAllFiles() {
-            files = [];
-            previewContainer.style.display = 'none';
-            fileInput.value = '';
-            generatedPdf = null;
-            showConvertButton();
+        // Create image preview
+        function createPreview(file) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+                
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.alt = file.name;
+                
+                const removeBtn = document.createElement('div');
+                removeBtn.className = 'remove-btn';
+                removeBtn.innerHTML = '&times;';
+                removeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    removeFile(file);
+                    previewItem.remove();
+                });
+                
+                previewItem.appendChild(img);
+                previewItem.appendChild(removeBtn);
+                previewContainer.appendChild(previewItem);
+            };
+            
+            reader.readAsDataURL(file);
         }
 
-        function showConvertButton() {
-            convertBtn.style.display = 'flex';
-            downloadBtn.style.display = 'none';
-            newConversionBtn.style.display = 'none';
+        // Remove file from uploaded files
+        function removeFile(fileToRemove) {
+            uploadedFiles = uploadedFiles.filter(file => file !== fileToRemove);
         }
 
-        function showDownloadButtons() {
-            convertBtn.style.display = 'none';
-            downloadBtn.style.display = 'flex';
-            newConversionBtn.style.display = 'flex';
+        // Clear all files
+        function clearAll() {
+            uploadedFiles = [];
+            previewContainer.innerHTML = '';
+            showToast('All files cleared');
         }
 
-        async function convertToPDF() {
-            if (files.length === 0) {
-                alert('Please select at least one image to convert.');
+        // Convert images to PDF
+        async function convertToPdf() {
+            if (uploadedFiles.length === 0) {
+                showToast('Please add images first');
                 return;
             }
 
-            // Show loading
-            loading.style.display = 'block';
-            convertBtn.disabled = true;
-
-            // Get user options
-            const pdfName = pdfNameInput.value || 'converted_images';
-            const pageSize = pageSizeSelect.value;
-            const orientation = pageOrientationSelect.value;
-
-            // Create PDF
-            const pdf = new jsPDF({
-                orientation: orientation,
-                unit: 'mm',
-                format: pageSize === 'auto' ? undefined : pageSize
-            });
-
             try {
+                // Show loading spinner
+                spinner.style.display = 'block';
+                convertBtn.disabled = true;
+                
+                // Get user settings
+                const pageSize = document.querySelector('input[name="pageSize"]:checked').value;
+                const orientation = document.querySelector('input[name="orientation"]:checked').value;
+                const fitToPage = document.getElementById('fitToPage').checked;
+                const maintainAspectRatio = document.getElementById('maintainAspectRatio').checked;
+                
+                // Initialize PDF
+                const pdf = new jsPDF({
+                    orientation: orientation,
+                    unit: 'mm',
+                    format: pageSize === 'auto' ? undefined : pageSize
+                });
+                
                 // Process each image
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
+                for (let i = 0; i < uploadedFiles.length; i++) {
+                    const file = uploadedFiles[i];
                     const imgData = await readFileAsDataURL(file);
+                    const img = await loadImage(imgData);
                     
-                    if (i > 0) {
-                        pdf.addPage();
+                    let imgWidth = img.width;
+                    let imgHeight = img.height;
+                    
+                    // Calculate dimensions in mm (1px = 0.264583mm)
+                    const pxToMm = 0.264583;
+                    imgWidth *= pxToMm;
+                    imgHeight *= pxToMm;
+                    
+                    // Get PDF page dimensions
+                    let pageWidth = pdf.internal.pageSize.getWidth();
+                    let pageHeight = pdf.internal.pageSize.getHeight();
+                    
+                    // Adjust for landscape
+                    if (orientation === 'landscape' && pageSize !== 'auto') {
+                        [pageWidth, pageHeight] = [pageHeight, pageWidth];
                     }
                     
+                    // Calculate dimensions to fit page if needed
+                    if (fitToPage) {
+                        const ratio = maintainAspectRatio ? 
+                            Math.min(pageWidth / imgWidth, pageHeight / imgHeight) : 1;
+                        
+                        imgWidth *= ratio;
+                        imgHeight *= ratio;
+                    }
+                    
+                    // Calculate position to center image
+                    const x = (pageWidth - imgWidth) / 2;
+                    const y = (pageHeight - imgHeight) / 2;
+                    
                     // Add image to PDF
-                    if (pageSize === 'auto') {
-                        // Get image dimensions to fit the page
-                        const img = await loadImage(imgData);
-                        const imgWidth = img.width;
-                        const imgHeight = img.height;
-                        
-                        // Calculate dimensions to fit PDF (A4 ratio)
-                        const pdfWidth = pdf.internal.pageSize.getWidth();
-                        const pdfHeight = pdf.internal.pageSize.getHeight();
-                        
-                        let width, height;
-                        const imgRatio = imgWidth / imgHeight;
-                        const pdfRatio = pdfWidth / pdfHeight;
-                        
-                        if (imgRatio > pdfRatio) {
-                            width = pdfWidth;
-                            height = pdfWidth / imgRatio;
-                        } else {
-                            height = pdfHeight;
-                            width = pdfHeight * imgRatio;
-                        }
-                        
-                        pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
-                    } else {
-                        // Fit to selected page size
-                        pdf.addImage(imgData, 'JPEG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
+                    pdf.addImage(imgData, 'JPEG', x, y, imgWidth, imgHeight);
+                    
+                    // Add new page if not last image
+                    if (i < uploadedFiles.length - 1) {
+                        pdf.addPage();
                     }
                 }
                 
-                // Store the generated PDF
-                generatedPdf = pdf;
-                
-                // Show download button instead of convert button
-                showDownloadButtons();
+                // Save PDF
+                pdf.save('converted_images.pdf');
+                showToast('PDF downloaded successfully');
                 
             } catch (error) {
-                console.error('Error creating PDF:', error);
-                alert('An error occurred while creating the PDF. Please try again.');
+                console.error('Error converting to PDF:', error);
+                showToast('Error converting images. Please try again.');
             } finally {
-                // Hide loading
-                loading.style.display = 'none';
+                spinner.style.display = 'none';
                 convertBtn.disabled = false;
             }
         }
 
-        function downloadPDF() {
-            if (generatedPdf) {
-                const pdfName = pdfNameInput.value || 'converted_images';
-                generatedPdf.save(`${pdfName}.pdf`);
-            }
-        }
-
-        function startNewConversion() {
-            clearAllFiles();
-        }
-
+        // Read file as Data URL
         function readFileAsDataURL(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -1661,6 +825,7 @@
             });
         }
 
+        // Load image to get dimensions
         function loadImage(src) {
             return new Promise((resolve, reject) => {
                 const img = new Image();
@@ -1669,870 +834,15 @@
                 img.src = src;
             });
         }
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert images to PDF online for free. Fast, secure, and easy-to-use image to PDF converter with multiple customization options.">
-    <meta name="keywords" content="image to pdf, convert images to pdf, jpg to pdf, png to pdf, free pdf converter, online pdf creator">
-    <meta name="author" content="Imagify">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Imagify - Convert Images to PDF Online">
-    <meta property="og:description" content="Free online tool to convert multiple images to PDF documents quickly and easily.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imagify.example.com">
-    <link rel="canonical" href="https://imagify.example.com">
-    <title>Imagify - Convert Images to PDF Online | Free Image to PDF Converter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4895ef;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4cc9f0;
-            --warning: #f72585;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 1.8rem;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .container {
-            flex: 1;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            width: 100%;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            background: linear-gradient(to right, var(--primary), var(--warning));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-        .converter-container {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            width: 100%;
-            max-width: 800px;
-            transition: all 0.3s ease;
-        }
-
-        .converter-container:hover {
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .drop-area {
-            border: 2px dashed var(--accent);
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .drop-area.highlight {
-            border-color: var(--success);
-            background-color: rgba(72, 149, 239, 0.05);
-        }
-
-        .drop-area i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .drop-area h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .drop-area p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-warning {
-            background-color: var(--warning);
-        }
-
-        .btn-warning:hover {
-            background-color: #e5177a;
-        }
-
-        .btn-success {
-            background-color: var(--success);
-        }
-
-        .btn-success:hover {
-            background-color: #3ab4d8;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .preview-container {
-            display: none;
-            margin-top: 2rem;
-            width: 100%;
-        }
-
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .preview-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 0.5rem;
-        }
-
-        .image-preview {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 1;
-        }
-
-        .image-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .remove-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(247, 37, 133, 0.8);
-            color: white;
-            border: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-preview:hover .remove-btn {
-            opacity: 1;
-        }
-
-        .options {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .option-group {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .option-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .option-group select, .option-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(67, 97, 238, 0.2);
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            width: 100%;
-        }
-
-        .action-buttons .btn {
-            flex: 1;
-            justify-content: center;
-        }
-
-        /* Ad Containers */
-        .ad-container {
-            width: 100%;
-            margin: 2rem 0;
-            text-align: center;
-            background-color: #f5f5f5;
-            padding: 1rem;
-            border-radius: 8px;
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ad-container.horizontal {
-            max-width: 728px;
-            height: 90px;
-        }
-
-        .ad-container.vertical {
-            max-width: 300px;
-            height: 250px;
-            margin: 2rem auto;
-        }
-
-        .ad-placeholder {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .converter-container {
-                padding: 1.5rem;
-            }
-
-            .options {
-                flex-direction: column;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .ad-container.horizontal {
-                height: 100px;
-            }
-        }
-
-        /* Structured Data for Rich Snippets */
-        .structured-data {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="active">Home</a>
-                <a href="#">Features</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Top Ad Banner -->
-        <div class="ad-container horizontal">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <div class="hero">
-            <h1>Convert Images to PDF in Seconds</h1>
-            <p>Drag and drop your images or select files to create a professional PDF document. Fast, secure, and completely free!</p>
-        </div>
-
-        <div class="converter-container">
-            <div class="drop-area" id="dropArea">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Drag & Drop Your Images Here</h3>
-                <p>or</p>
-                <button class="btn" id="selectFilesBtn">
-                    <i class="fas fa-folder-open"></i> Select Files
-                </button>
-                <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
-            </div>
-
-            <div class="preview-container" id="previewContainer">
-                <div class="preview-header">
-                    <h3>Selected Images</h3>
-                    <button class="btn btn-warning" id="clearAllBtn">
-                        <i class="fas fa-trash"></i> Clear All
-                    </button>
-                </div>
-                <div class="preview-images" id="previewImages"></div>
-
-                <div class="options">
-                    <div class="option-group">
-                        <label for="pdfName">PDF Name</label>
-                        <input type="text" id="pdfName" placeholder="Enter PDF name" value="converted_images">
-                    </div>
-                    <div class="option-group">
-                        <label for="pageSize">Page Size</label>
-                        <select id="pageSize">
-                            <option value="a4">A4</option>
-                            <option value="letter">Letter</option>
-                            <option value="legal">Legal</option>
-                            <option value="auto">Auto (Fit to image)</option>
-                        </select>
-                    </div>
-                    <div class="option-group">
-                        <label for="pageOrientation">Orientation</label>
-                        <select id="pageOrientation">
-                            <option value="portrait">Portrait</option>
-                            <option value="landscape">Landscape</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Creating your PDF...</p>
-                </div>
-
-                <div class="action-buttons">
-                    <button class="btn" id="convertBtn">
-                        <i class="fas fa-file-pdf"></i> Convert to PDF
-                    </button>
-                    <button class="btn btn-success" id="downloadBtn" style="display: none;">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-outline" id="newConversionBtn" style="display: none;">
-                        <i class="fas fa-redo"></i> New Conversion
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sidebar Ad (shown on larger screens) -->
-        <div class="ad-container vertical" style="display: none;">
-            <!-- Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="0987654321"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <i class="fas fa-file-pdf"></i>
-                <span>Imagify</span>
-            </div>
-            <p>The easiest way to convert your images to PDF documents</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <p class="copyright">© 2025 Imagify. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json" class="structured-data">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Imagify - Image to PDF Converter",
-        "url": "https://imagify.example.com",
-        "description": "Free online tool to convert multiple images to PDF documents quickly and easily.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "Imagify"
-        }
-    }
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        // Initialize jsPDF
-        const { jsPDF } = window.jspdf;
-
-        // DOM Elements
-        const dropArea = document.getElementById('dropArea');
-        const fileInput = document.getElementById('fileInput');
-        const selectFilesBtn = document.getElementById('selectFilesBtn');
-        const previewContainer = document.getElementById('previewContainer');
-        const previewImages = document.getElementById('previewImages');
-        const clearAllBtn = document.getElementById('clearAllBtn');
-        const convertBtn = document.getElementById('convertBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const newConversionBtn = document.getElementById('newConversionBtn');
-        const loading = document.getElementById('loading');
-        const pdfNameInput = document.getElementById('pdfName');
-        const pageSizeSelect = document.getElementById('pageSize');
-        const pageOrientationSelect = document.getElementById('pageOrientation');
-        const verticalAd = document.querySelector('.ad-container.vertical');
-
-        // Store selected files and generated PDF
-        let files = [];
-        let generatedPdf = null;
-
-        // Show vertical ad on larger screens
-        if (window.innerWidth > 992) {
-            verticalAd.style.display = 'flex';
-        }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 992) {
-                verticalAd.style.display = 'flex';
-            } else {
-                verticalAd.style.display = 'none';
-            }
-        });
-
-        // Event Listeners
-        selectFilesBtn.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', handleFileSelect);
-        dropArea.addEventListener('dragover', handleDragOver);
-        dropArea.addEventListener('dragleave', handleDragLeave);
-        dropArea.addEventListener('drop', handleDrop);
-        clearAllBtn.addEventListener('click', clearAllFiles);
-        convertBtn.addEventListener('click', convertToPDF);
-        downloadBtn.addEventListener('click', downloadPDF);
-        newConversionBtn.addEventListener('click', startNewConversion);
-
-        // Functions
-        function handleFileSelect(e) {
-            const selectedFiles = e.target.files;
-            if (selectedFiles.length > 0) {
-                files = Array.from(selectedFiles);
-                updatePreview();
-            }
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-            dropArea.classList.add('highlight');
-        }
-
-        function handleDragLeave() {
-            dropArea.classList.remove('highlight');
-        }
-
-        function handleDrop(e) {
-            e.preventDefault();
-            dropArea.classList.remove('highlight');
+        // Show toast notification
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
             
-            const droppedFiles = e.dataTransfer.files;
-            if (droppedFiles.length > 0) {
-                files = Array.from(droppedFiles).filter(file => file.type.startsWith('image/'));
-                updatePreview();
-            }
-        }
-
-        function updatePreview() {
-            if (files.length === 0) return;
-            
-            previewImages.innerHTML = '';
-            
-            files.forEach((file, index) => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const imagePreview = document.createElement('div');
-                    imagePreview.className = 'image-preview';
-                    
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = file.name;
-                    
-                    const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-btn';
-                    removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-                    removeBtn.addEventListener('click', () => removeFile(index));
-                    
-                    imagePreview.appendChild(img);
-                    imagePreview.appendChild(removeBtn);
-                    previewImages.appendChild(imagePreview);
-                };
-                reader.readAsDataURL(file);
-            });
-            
-            previewContainer.style.display = 'block';
-            showConvertButton();
-        }
-
-        function removeFile(index) {
-            files.splice(index, 1);
-            updatePreview();
-            
-            if (files.length === 0) {
-                previewContainer.style.display = 'none';
-            }
-        }
-
-        function clearAllFiles() {
-            files = [];
-            previewContainer.style.display = 'none';
-            fileInput.value = '';
-            generatedPdf = null;
-            showConvertButton();
-        }
-
-        function showConvertButton() {
-            convertBtn.style.display = 'flex';
-            downloadBtn.style.display = 'none';
-            newConversionBtn.style.display = 'none';
-        }
-
-        function showDownloadButtons() {
-            convertBtn.style.display = 'none';
-            downloadBtn.style.display = 'flex';
-            newConversionBtn.style.display = 'flex';
-        }
-
-        async function convertToPDF() {
-            if (files.length === 0) {
-                alert('Please select at least one image to convert.');
-                return;
-            }
-
-            // Show loading
-            loading.style.display = 'block';
-            convertBtn.disabled = true;
-
-            // Get user options
-            const pdfName = pdfNameInput.value || 'converted_images';
-            const pageSize = pageSizeSelect.value;
-            const orientation = pageOrientationSelect.value;
-
-            // Create PDF
-            const pdf = new jsPDF({
-                orientation: orientation,
-                unit: 'mm',
-                format: pageSize === 'auto' ? undefined : pageSize
-            });
-
-            try {
-                // Process each image
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const imgData = await readFileAsDataURL(file);
-                    
-                    if (i > 0) {
-                        pdf.addPage();
-                    }
-                    
-                    // Add image to PDF
-                    if (pageSize === 'auto') {
-                        // Get image dimensions to fit the page
-                        const img = await loadImage(imgData);
-                        const imgWidth = img.width;
-                        const imgHeight = img.height;
-                        
-                        // Calculate dimensions to fit PDF (A4 ratio)
-                        const pdfWidth = pdf.internal.pageSize.getWidth();
-                        const pdfHeight = pdf.internal.pageSize.getHeight();
-                        
-                        let width, height;
-                        const imgRatio = imgWidth / imgHeight;
-                        const pdfRatio = pdfWidth / pdfHeight;
-                        
-                        if (imgRatio > pdfRatio) {
-                            width = pdfWidth;
-                            height = pdfWidth / imgRatio;
-                        } else {
-                            height = pdfHeight;
-                            width = pdfHeight * imgRatio;
-                        }
-                        
-                        pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
-                    } else {
-                        // Fit to selected page size
-                        pdf.addImage(imgData, 'JPEG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
-                    }
-                }
-                
-                // Store the generated PDF
-                generatedPdf = pdf;
-                
-                // Show download button instead of convert button
-                showDownloadButtons();
-                
-            } catch (error) {
-                console.error('Error creating PDF:', error);
-                alert('An error occurred while creating the PDF. Please try again.');
-            } finally {
-                // Hide loading
-                loading.style.display = 'none';
-                convertBtn.disabled = false;
-            }
-        }
-
-        function downloadPDF() {
-            if (generatedPdf) {
-                const pdfName = pdfNameInput.value || 'converted_images';
-                generatedPdf.save(`${pdfName}.pdf`);
-            }
-        }
-
-        function startNewConversion() {
-            clearAllFiles();
-        }
-
-        function readFileAsDataURL(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        }
-
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = reject;
-                img.src = src;
-            });
-        }
-    </script>
-</body>
-</html>eadFileAsDataURL(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        }
-
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = reject;
-                img.src = src;
-            });
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
     </script>
 </body>
